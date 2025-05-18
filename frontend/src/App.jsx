@@ -34,22 +34,30 @@ export default function App() {
         />
 
         <Box component="main" sx={{ flexGrow: 1, p: 3, overflowY: "auto" }}>
-          <Header onSidebarToggle={() => setSidebarOpen(!sidebarOpen)} />
+        <Header onSidebarToggle={() => setSidebarOpen(!sidebarOpen)} />
 
-          {(activeView === null) || (activeView === "form") && (
-            <AxisSensorForm onArchitectureGenerated={handleArchitectureGenerated} />
-          )}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mt: 4, // add spacing below the header
+          }}
+          >
+            {(activeView === null || activeView === "form") && (
+              <AxisSensorForm onArchitectureGenerated={handleArchitectureGenerated} />
+            )}
 
-          {activeView === "architecture" && architecture && (
-            <ArchitectureView architecture={architecture} onBack={handleBack} />
-          )}
+            {activeView === "architecture" && architecture && (
+              <ArchitectureView architecture={architecture} onBack={handleBack} />
+            )}
 
-          {activeView === "settings" && (
-            <div>
-              <h2>Settings</h2>
-              {/* Add your settings content here */}
-            </div>
-          )}
+            {activeView === "settings" && (
+              <div>
+                <h2>Settings</h2>
+                {/* Add your settings content here */}
+              </div>
+            )}
+          </Box>
         </Box>
       </Box>
     </>
