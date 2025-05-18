@@ -1,0 +1,36 @@
+{
+  "overview": "The motion control system is designed to position a model inside a wind tunnel by controlling the yaw and incident axis, as well as displaying sensor readings from 6 different directions.",
+  
+  "hardware": [
+    "TwinCAT PLC system",
+    "Motor controllers for controlling yaw and incident axis",
+    "Sensors for reading data from 6 different directions",
+    "HMI for displaying sensor readings and system status"
+  ],
+  
+  "libraries": [
+    "TwinCAT Motion Control Library",
+    "Delphi IDE for developing HMI interface"
+  ],
+  
+  "classes": [
+    {
+      "name": "MotorController",
+      "functions": [
+        {"name": "setSpeed", "inputs": ["int"], "outputs": ["bool"]}
+      ]
+    },
+    {
+      "name": "SensorReader",
+      "functions": [
+        {"name": "readSensorData", "inputs": [], "outputs": ["float", "float", "float", "float", "float", "float"]}
+      ]
+    },
+    {
+      "name": "HMIController",
+      "functions": [
+        {"name": "displayReadings", "inputs": ["float", "float", "float", "float", "float", "float"], "outputs": []}
+      ]
+    }
+  ]
+}
